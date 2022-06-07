@@ -4,10 +4,19 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { navigate } from 'gatsby';
+import Alert from '@mui/material/Alert';
+import Button from '@mui/material/Button';
+import SendIcon from '@mui/icons-material/Send';
 
+const sucess = ['Boa Neno por isso que você é a melhor', 'Booooooooouuuuaaaaa Baby !!!!! s2', 'Nada mal para uma Schiavini ;D']
+const errorList = ["Poxa Neno !! Você pode fazer muiiiito melhor do que isso", "....quem sabe na próxima", 'Neno eu to com fomee!! Acerta logo!']
 const BlogPost = ({ data }) => {
   const [anwser, setAnwser] = React.useState("")
-  
+  const [sucessMsg, SetSucessMsg] = React.useState(sucess[0])
+  const [errorMsg, SetErrorMsg] = React.useState(errorList[0])
+  const [showSucess, setShowSucess] = React.useState(false)
+  const [showError, setShowError] = React.useState(false)
+
   const image = getImage(data.mdx.frontmatter.hero_image)
 
   const inputAnwser = (event) => {
@@ -15,16 +24,24 @@ const BlogPost = ({ data }) => {
   }
 
   const handleButton = () => {
-    console.log(data.mdx.frontmatter)
-    if(data.mdx.frontmatter.resposta.includes(anwser.toLowerCase())){
-      navigate(`/${data.mdx.frontmatter.next_quiz}/`)
-      console.log(data.mdx.frontmatter)
+      const index = Math.floor(Math.random()*sucess.length)
+      SetSucessMsg(sucess[index])
+      SetErrorMsg(errorList[index])
+      if(data.mdx.frontmatter.resposta.includes(anwser.toLowerCase())){
+          setShowSucess(true)
+          setTimeout(()=> navigate(`/${data.mdx.frontmatter.next_quiz}/`), 3000)
+          return
     }
-    
+        setShowError(true)
+        setTimeout(()=> setShowError(false), 3000)
   }
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
+    
+    {showSucess && <Alert severity="success">{sucessMsg}</Alert>}
+    {showError && <Alert severity="error">{errorMsg}</Alert>}
+
     <GatsbyImage
         image={image}
         alt={data.mdx.frontmatter.hero_image_alt}
@@ -36,7 +53,9 @@ const BlogPost = ({ data }) => {
       </p>
       <div style ={{display:'flex', flexDirection: 'column'}}>
         <input style={{height: '30px', borderRadius: '4px', padding: "1px 10px", color:'black', fontWeight: 600, marginBottom: '12px'}} onChange={inputAnwser} type="text"/>
-        <button style={{height: '40px', borderRadius: '4px', padding: "1px 10px", color:'#fff', fontWeight: 600, marginBottom: '12px', backgroundColor: '#333'}} onClick = {handleButton}> Enviar </button>
+        <Button style={{backgroundColor: 'rebeccapurple'}} onClick = {handleButton} variant="contained" endIcon={<SendIcon />}>
+        Enviar Resposta
+      </Button>
       </div>
     </Layout>
   )
@@ -47,10 +66,8 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY")
         hero_image_alt
         hero_image_credit_link
-        hero_image_credit_text
         hero_image {
           childImageSharp {
             gatsbyImageData
