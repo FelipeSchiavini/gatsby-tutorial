@@ -4,7 +4,6 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { navigate } from 'gatsby';
-import input from '../components/layout.module.css'
 
 const BlogPost = ({ data }) => {
   const [anwser, setAnwser] = React.useState("")
