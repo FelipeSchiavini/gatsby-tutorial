@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 import Layout from '../components/layout'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import { navigate } from 'gatsby';
+import input from '../components/layout.module.css'
 
 const BlogPost = ({ data }) => {
   const [anwser, setAnwser] = React.useState("")
@@ -29,14 +30,14 @@ const BlogPost = ({ data }) => {
         image={image}
         alt={data.mdx.frontmatter.hero_image_alt}
       />  
-      <p style={{color:'red', fontSize:'20px'}}>
+      <p style={{color:'green', fontSize:'20px', textAlign: 'justify'}}>
       <MDXRenderer >
         {data.mdx.body}
       </MDXRenderer>
       </p>
       <div style ={{display:'flex', flexDirection: 'column'}}>
-        <input onChange={inputAnwser} type="text"/>
-        <button onClick = {handleButton}> Enviar </button>
+        <input style={{height: '30px', borderRadius: '4px', padding: "1px 10px", color:'black', fontWeight: 600, marginBottom: '12px'}} onChange={inputAnwser} type="text"/>
+        <button style={{height: '40px', borderRadius: '4px', padding: "1px 10px", color:'#fff', fontWeight: 600, marginBottom: '12px', backgroundColor: '#333'}} onClick = {handleButton}> Enviar </button>
       </div>
     </Layout>
   )

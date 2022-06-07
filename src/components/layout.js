@@ -24,13 +24,13 @@ const Layout = ({ pageTitle, children }) => {
   return (
       <div className={container}>
         <title >{pageTitle}</title>
-        <header className={siteTitle}>{data.site.siteMetadata.title}</header>
+        <header className={siteTitle}>Neno <span>&</span> Nena</header>
         <nav>
           <ul className={navLinks}>
             <li className={navLinkItem}><Link to="/" className={navLinkText}>Home</Link></li>
             {/* <li className={navLinkItem}><Link to="/about" className={navLinkText}>About</Link></li> */}
             <li className={navLinkItem}>
-              <Link to="/blog" className={navLinkText}>
+              <Link to="/pergunta-1c" className={navLinkText}>
                 Quizzzzz da Nena
               </Link>
             </li>
