@@ -17,8 +17,8 @@ const BlogPost = ({ data }) => {
   const [showSucess, setShowSucess] = React.useState(false)
   const [showError, setShowError] = React.useState(false)
 
+  
   const image = getImage(data.mdx.frontmatter.hero_image)
-
   const inputAnwser = (event) => {
     setAnwser(event.target.value)
   }
@@ -67,7 +67,6 @@ export const query = graphql`
       frontmatter {
         title
         hero_image_alt
-        hero_image_credit_link
         hero_image {
           childImageSharp {
             gatsbyImageData
