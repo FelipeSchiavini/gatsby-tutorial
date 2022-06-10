@@ -8,8 +8,8 @@ import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
 
-const sucess = ['Boa Neno por isso que você é a melhor', 'Booooooooouuuuaaaaa Baby !!!!! s2', 'Nada mal para uma Schiavini ;D']
-const errorList = ["Poxa Neno !! Você pode fazer muiiiito melhor do que isso", "....quem sabe na próxima", 'Neno eu to com fomee!! Acerta logo!']
+const sucess = ['Boa Neno por isso que você é a melhor', 'Booooooooouuuuaaaaa Baby !!!!! s2', 'Nada mal para uma Schiavini ;D', "Mi Neno eres uno Genio !!!!!", "Top !!!!!!!"]
+const errorList = ["Poxa Neno !! Você pode fazer muiiiito melhor do que isso", "....quem sabe na próxima", 'Neno eu to com fomee!! Acerta logo!', "Qualé Neno??? essa era fácil", "se me der uns 10 beijos posso te dar uma dica"]
 const BlogPost = ({ data }) => {
   const [anwser, setAnwser] = React.useState("")
   const [sucessMsg, SetSucessMsg] = React.useState(sucess[0])
@@ -29,18 +29,18 @@ const BlogPost = ({ data }) => {
       SetErrorMsg(errorList[index])
       if(data.mdx.frontmatter.resposta.includes(anwser.toLowerCase())){
           setShowSucess(true)
-          setTimeout(()=> navigate(`/${data.mdx.frontmatter.next_quiz}/`), 3000)
+          setTimeout(()=> navigate(`/${data.mdx.frontmatter.next_quiz}/`), 2000)
           return
     }
         setShowError(true)
-        setTimeout(()=> setShowError(false), 3000)
+        setTimeout(()=> setShowError(false), 2000)
   }
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
     
-    {showSucess && <Alert severity="success">{sucessMsg}</Alert>}
-    {showError && <Alert severity="error">{errorMsg}</Alert>}
+    {showSucess && <Alert style = {{position: 'absolute', top: 0, zIndex: 3}} severity="success">{sucessMsg}</Alert>}
+    {showError && <Alert style = {{position: 'absolute', top: 0, zIndex: 3}} severity="error">{errorMsg}</Alert>}
 
     <GatsbyImage
         image={image}
