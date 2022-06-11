@@ -51,7 +51,7 @@ const BlogPost = ({ data }) => {
         {data.mdx.body}
       </MDXRenderer>
         {data.mdx.frontmatter.next_quiz === 'pergunta-4a' ? <div style={{display: 'flex', justifyContent: 'center'}}>
-        <ReactPlayer height='180px' width='320px' url='https://www.youtube.com/watch?v=EWDPT-dVxHg' playing={true} />
+        <ReactPlayer height='180px' width='320px' url='https://www.youtube.com/watch?v=wjsJQ6jIfPw' />
         </div> : null}
       </p>
       <div style ={{display:'flex', flexDirection: 'column'}}>
