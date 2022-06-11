@@ -11,18 +11,16 @@
 
   .nav-links {
     display: flex;
+    padding-inline-start: 0;
     list-style: none;
     padding-left: 0;
-    margin: 0 0 0 50px;
     width: 100%;
     display: flex;
     justify-content: space-around;
   }
 
   .nav-link-item {
-    padding-right: 2rem;
-    color: red;
-    text-align: center; 
+    text-align: center;
   }
 
   .nav-link-text {

@@ -29,18 +29,18 @@ const BlogPost = ({ data }) => {
       SetErrorMsg(errorList[index])
       if(data.mdx.frontmatter.resposta.includes(anwser.toLowerCase())){
           setShowSucess(true)
-          setTimeout(()=> navigate(`/${data.mdx.frontmatter.next_quiz}/`), 2000)
+          setTimeout(()=> navigate(`/${data.mdx.frontmatter.next_quiz}/`), 2500)
           return
     }
         setShowError(true)
-        setTimeout(()=> setShowError(false), 2000)
+        setTimeout(()=> setShowError(false), 2500)
   }
 
   return (
     <Layout pageTitle={data.mdx.frontmatter.title}>
     
-    {showSucess && <Alert style = {{position: 'absolute', top: 0, zIndex: 3}} severity="success">{sucessMsg}</Alert>}
-    {showError && <Alert style = {{position: 'absolute', top: 0, zIndex: 3}} severity="error">{errorMsg}</Alert>}
+    {showSucess && <Alert style = {{position: 'fixed', top: 0,left:0, right:0, width:'100%', zIndex: 3}} severity="success">{sucessMsg}</Alert>}
+    {showError && <Alert style = {{position: 'fixed', top: 0,left:0, top: 0, width:'100%', zIndex: 3}} severity="error">{errorMsg}</Alert>}
 
     <GatsbyImage
         image={image}
