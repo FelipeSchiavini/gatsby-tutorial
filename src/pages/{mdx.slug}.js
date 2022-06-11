@@ -50,7 +50,9 @@ const BlogPost = ({ data }) => {
       <MDXRenderer >
         {data.mdx.body}
       </MDXRenderer>
-        {data.mdx.frontmatter.next_quiz === 'pergunta-4a' ? <ReactPlayer style={{maxWidth: '500px'}} url='https://www.youtube.com/watch?v=_ctF41q6OoQ' /> : null}
+        {data.mdx.frontmatter.next_quiz === 'pergunta-4a' ? <div style={{display: 'flex', justifyContent: 'center'}}>
+        <ReactPlayer height='180px' width='320px' url='https://www.youtube.com/watch?v=EWDPT-dVxHg' playing={true} />
+        </div> : null}
       </p>
       <div style ={{display:'flex', flexDirection: 'column'}}>
         <input style={{height: '30px', borderRadius: '4px', padding: "1px 10px", color:'black', fontWeight: 600, marginBottom: '12px'}} onChange={inputAnwser} type="text"/>
