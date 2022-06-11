@@ -13,3 +13,8 @@ jobs:
           node-version: "14.15.0"
       - run: npm install
       - run: npm run build
+      - uses: akhileshns/heroku-deploy@v3.12.12
+      with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "JESSICA MELISE FEITOSA"
+          heroku_email: "felipe@stabel.com.br"
