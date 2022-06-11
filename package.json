@@ -33,5 +33,13 @@
     "react-alert-template-basic": "^1.0.2",
     "react-dom": "^17.0.1",
     "styled-components": "^5.3.5"
-  }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
 }
