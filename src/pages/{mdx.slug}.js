@@ -7,6 +7,7 @@ import { navigate } from 'gatsby';
 import Alert from '@mui/material/Alert';
 import Button from '@mui/material/Button';
 import SendIcon from '@mui/icons-material/Send';
+import ReactPlayer from 'react-player'
 
 const sucess = ['Boa Neno por isso que você é a melhor', 'Booooooooouuuuaaaaa Baby !!!!! s2', 'Nada mal para uma Schiavini ;D', "Mi Neno eres uno Genio !!!!!", "Top !!!!!!!"]
 const errorList = ["Poxa Neno !! Você pode fazer muiiiito melhor do que isso", "....quem sabe na próxima", 'Neno eu to com fomee!! Acerta logo!', "Qualé Neno??? essa era fácil", "se me der uns 10 beijos posso te dar uma dica"]
@@ -41,15 +42,15 @@ const BlogPost = ({ data }) => {
     
     {showSucess && <Alert style = {{position: 'fixed', top: 0,left:0, right:0, width:'100%', zIndex: 3}} severity="success">{sucessMsg}</Alert>}
     {showError && <Alert style = {{position: 'fixed', top: 0,left:0, top: 0, width:'100%', zIndex: 3}} severity="error">{errorMsg}</Alert>}
-
     <GatsbyImage
         image={image}
         alt={data.mdx.frontmatter.hero_image_alt}
-      />  
+        />  
       <p style={{color:'green', fontSize:'20px', textAlign: 'justify'}}>
       <MDXRenderer >
         {data.mdx.body}
       </MDXRenderer>
+        {data.mdx.frontmatter.next_quiz === 'pergunta-4a' ? <ReactPlayer style={{maxWidth: '500px'}} url='https://www.youtube.com/watch?v=_ctF41q6OoQ' /> : null}
       </p>
       <div style ={{display:'flex', flexDirection: 'column'}}>
         <input style={{height: '30px', borderRadius: '4px', padding: "1px 10px", color:'black', fontWeight: 600, marginBottom: '12px'}} onChange={inputAnwser} type="text"/>

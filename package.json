@@ -15,8 +15,8 @@
     "clean": "gatsby clean",
     "heroku-postbuild": "gatsby build"
   },
-  "engines" : { 
-    "node" : "14.15.0",
+  "engines": {
+    "node": "14.15.0",
     "npm": "6.14.8"
   },
   "dependencies": {
@@ -37,6 +37,7 @@
     "react-alert": "^7.0.3",
     "react-alert-template-basic": "^1.0.2",
     "react-dom": "^17.0.1",
+    "react-player": "^2.10.1",
     "styled-components": "^5.3.5"
   }
 }

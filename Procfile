@@ -1,1 +1,1 @@
-web: npm start --port ${PORT-:3000}
+web: gatsby develop -p $PORT -H 0.0.0.0
