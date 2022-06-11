@@ -36,7 +36,7 @@ const IndexPage = () => {
           Se a internet cair. podemos ter problemas para chegar no final! 🤣😂 </p>
           <p style={{textAlign: 'justify', fontSize: '20px', fontFamily: 'Kdam Thmor Pro', color: 'rgba(0,0,0,0.8)'}}><strong> 😈😈😈😈 LET'S START THE GAME! 😈😈😈😈</strong></p>
           <div style={{display: 'flex', justifyContent:'center' }}>
-          <img width='400px' src="https://media3.giphy.com/media/XaO4yoeSvwBA4/giphy.gif?cid=ecf05e477rgabdcifrv1frt0uq2annsq25cpt1lhn26k6lhg&rid=giphy.gif&ct=g" alt="giff"></img>
+          <img width='350px' src="https://media3.giphy.com/media/XaO4yoeSvwBA4/giphy.gif?cid=ecf05e477rgabdcifrv1frt0uq2annsq25cpt1lhn26k6lhg&rid=giphy.gif&ct=g" alt="giff"></img>
           </div>
       </Layout>
 
