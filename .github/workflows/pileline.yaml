@@ -15,8 +15,8 @@ jobs:
           deploy-branch: main
           gatsby-args: --prefix-paths
           access-token: ${{secrets.PERSONAL_KEY}}
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.12.12
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "TESTES"
+          heroku_app_name: "heroku-testes"
           heroku_email: "felipe@stabel.com.br"
